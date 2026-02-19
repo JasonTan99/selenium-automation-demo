@@ -22,7 +22,7 @@ def driver():
 
     options = Options()
     options.add_argument(f"--user-data-dir={profile_path}")
-    options.add_argument("--start-maximized")
+    options.add_argument("--start-maximized") 
 
     # Ensure page_load_strategy doesn't break ChromeDriver
     options.page_load_strategy = "normal"
@@ -33,7 +33,7 @@ def driver():
     driver.quit()
 
 # -------------------
-# Test case
+# Test case example
 # -------------------
 def test_send_whatsapp_message(driver):
     driver.get("https://web.whatsapp.com")
