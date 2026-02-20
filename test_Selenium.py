@@ -25,5 +25,15 @@ def test_login(driver):
         print("Page loaded successfully!")
     except TimeoutException:
         print("Page failed to load or element not found.")
+    
+    driver.find_element(By.ID, "user-name").send_keys("standard_user")
+    driver.find_element(By.ID, "password").send_keys("secret_sauce")
+    driver.find_element(By.ID, "login-button").click()
 
+    try:
+        WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//span[@class='title' and @data-test='title']")))
+        print("Login successful")
+    except TimeoutException:
+        print("Login failed or page did not load.")
     time.sleep(20)
