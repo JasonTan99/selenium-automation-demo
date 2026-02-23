@@ -30,7 +30,7 @@ def test_login(driver):
     driver.find_element(By.ID, "password").send_keys("secret_sauce")
     driver.find_element(By.ID, "login-button").click()
 
-    time.sleep(2)
+    time.sleep(5)
 
 
     try:
