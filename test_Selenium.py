@@ -30,6 +30,9 @@ def test_login(driver):
     driver.find_element(By.ID, "password").send_keys("secret_sauce")
     driver.find_element(By.ID, "login-button").click()
 
+    time.sleep(2)
+
+
     try:
         WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, "//span[@class='title' and @data-test='title']")))
