@@ -36,7 +36,7 @@ def test_login(driver):
     try:
         WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, "//span[@class='title' and @data-test='title']")))
-        print("Login successfully!!!")
+        print("Login successfully!")
     except TimeoutException:
         print("Login failed or page did not load.") #commenttt
     time.sleep(20)
